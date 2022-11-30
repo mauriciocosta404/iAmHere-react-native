@@ -24,5 +24,17 @@ export const Styles=StyleSheet.create({
         marginTop:7,
         padding:10,
         fontSize:13,
+    },
+    buttonText:{
+        color:'#fff',
+        fontSize:36,
+        textAlign:'center',
+        alignSelf:'center',
+    },
+    button:{
+        height:46,
+        width:46,
+        borderRadius:5,
+        backgroundColor:'#31cf67'
     }
   });
