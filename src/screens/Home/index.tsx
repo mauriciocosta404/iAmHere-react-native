@@ -4,9 +4,13 @@ import { Participant } from "../../components/participant";
 
 export default function Home(){
 
-    const handlePartcipantAdd=()=>{
-        console.log('voe clickou no botão');
-    }
+  const handlePartcipantRemove=()=>{
+    console.log('voe clickou no botão');
+}
+
+  const handlePartcipantAdd=()=>{
+      console.log('voe clickou no botão');
+  }
 
   return(
     <View style={Styles.container}>
@@ -26,9 +30,9 @@ export default function Home(){
         </TouchableOpacity>
       </View>
 
-      <Participant name='mauicio coa'/>
-      <Participant name='donilon coa'/>
-      <Participant name='Luzia coa'/>  
+      <Participant name='mauicio coa' onRemove={handlePartcipantRemove}/>
+      <Participant name='donilon coa' onRemove={handlePartcipantRemove}/>
+      <Participant name='Luzia coa' onRemove={handlePartcipantRemove}/>  
 
     </View>
   )
