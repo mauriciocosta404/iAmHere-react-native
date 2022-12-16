@@ -1,10 +1,11 @@
-import { Text,View,TextInput,TouchableOpacity,ScrollView} from "react-native"
+import { Text,View,TextInput,TouchableOpacity,ScrollView,FlatList} from "react-native"
 import { Styles } from "./styles"
 import { Participant } from "../../components/participant";
+import { styles } from "../../components/participant/styles";
 
 export default function Home(){
 
-  const participants=['mauicio','Luzia','Doni','Muteka','victor','victoria','Aida'];
+  const participants=['Mauricio Costa','Fabio Junick','Pedro Muteka','Donilson Costa','Luzia Costa','Victor Costa','Victoria Costa'];
 
   const handlePartcipantRemove=()=>{
     console.log('voe clickou no botão');
@@ -32,13 +33,16 @@ export default function Home(){
         </TouchableOpacity>
       </View>
 
-      <ScrollView>
-        {
-          participants.map((participant,key)=>(
-            <Participant key={key} name={participant} onRemove={handlePartcipantRemove}/>
-          ))
-        }
-      </ScrollView>
+      <FlatList
+        data={participants}
+        keyExtractor={item=>item}
+        renderItem={({item})=>(
+          <Participant key={item} name={item} onRemove={handlePartcipantRemove}/>
+        )}
+        ListEmptyComponent={()=>(
+          <Text style={Styles.whenListIsEmpty}>Nimguém cadastrado na lista. adicione participantes a sua lista</Text>
+        )}
+      />
 
     </View>
   )

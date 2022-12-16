@@ -38,11 +38,18 @@ export const Styles=StyleSheet.create({
     borderRadius:5,
     backgroundColor:'#31cf67'
     },
+    whenListIsEmpty:{
+      marginTop:0,
+      color:'#fff',
+      fontSize:13,
+      textAlign:'center',
+    }
+    ,
   form:{
     marginTop:30,
     width:'100%',
     flexDirection:'row',  
     alignItems:'center',
     marginBottom:30,
-  }
+  },
 });
