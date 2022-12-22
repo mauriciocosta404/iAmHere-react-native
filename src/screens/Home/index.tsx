@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Home(){
 
-  const [participants,setParticipants]=useState<string[]>([]);
+  const [participants,setParticipants]=useState<string[]>(['Mauricio']);
   const [participantName,setParticipantName]=useState("");
 
   const handlePartcipantAdd=()=>{
@@ -21,7 +21,7 @@ export default function Home(){
     Alert.alert("Remover",`Remover o participante ${name} ?`,[
       {
         text:"sim",
-        onPress:()=>Alert.alert("Deletado !")
+        onPress:()=> setParticipants(participants.filter( participant => participant!==name))
       },
       {
         text:"não",
