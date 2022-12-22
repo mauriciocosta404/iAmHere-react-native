@@ -54,10 +54,17 @@ export default function Home(){
         data={participants}
         keyExtractor={item=>item}
         renderItem={({item})=>(
-          <Participant key={item} name={item} onRemove={()=>handlePartcipantRemove(item)}/>
+          <Participant 
+            key={item} 
+            name={item} 
+            onRemove={()=>handlePartcipantRemove(item)}
+          />
         )}
         ListEmptyComponent={()=>(
-          <Text style={Styles.whenListIsEmpty}>Nimguém cadastrado na lista. adicione participantes a sua lista</Text>
+          <Text 
+            style={Styles.whenListIsEmpty}>
+            Nimguém cadastrado na lista. adicione participantes a sua lista
+          </Text>
         )}
       />
 
